@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hey!</title>
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style1.css">
+</head>
+<body>
+    <div class="main">
+        <div class="hey">
+            <h1>Hello!</h1>
+            <h1>Do You Wanna Go Out With Me?</h1>
+        </div>
+        <div>
+            <img src="https://media1.giphy.com/media/gDfteqLchLcRTtjAD7/giphy.gif?cid=ecf05e478zbxnw8hpxcspeixfy5e474nooupzhrj7w8oqton&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="GIF" class="GIF">
+        </div>
+        <div class="buttons">
+            <button class="yesbutton" onclick="nextPage()">Yes</button>
+            <button class="nobutton" id="noButton" onmouseover="moveButton()" onclick="noButton()">No</button>
+        </div>
+        <div class="dev">
+            <p>By Alex</p>
+        </div>
+    </div>
+    <script>
+        function nextPage() {
+            window.location.href = "yes.html";
+        }
+
+        function moveButton() {
+            var button = document.getElementById('noButton');
+            var mainDiv = document.querySelector('.main');
+
+            var maxX = mainDiv.clientWidth - button.offsetWidth;
+            var maxY = mainDiv.clientHeight - button.offsetHeight;
+
+            var x, y;
+
+            do {
+                x = Math.random() * maxX;
+                y = Math.random() * maxY;
+            } while (x < 0 || y < 0);
+
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+
+        }
+
+        function noButton() {
+            window.location.href = "No.html"
+        }
+    </script>
+</body>
+</html>
